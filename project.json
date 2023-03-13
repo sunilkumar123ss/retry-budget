@@ -1,0 +1,8 @@
+{
+  "slug": "retry-budget",
+  "title": "Shared retry budget",
+  "description": "Limit retry amplification using a fractional token budget earned by original requests.",
+  "category": "systems",
+  "demo_args": [],
+  "expected_exit": 0
+}
