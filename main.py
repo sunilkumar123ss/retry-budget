@@ -38,3 +38,13 @@ class RetryBudget:
 
     def snapshot(self):
         return {'tokens': str(self.tokens), 'original_requests': self.originals, 'allowed_retries': self.retries}
+
+def demo():
+    budget = RetryBudget(capacity=3, ratio='0.25')
+    for _ in range(12):
+        budget.record_original()
+    decisions = [budget.allow_retry() for _ in range(5)]
+    return {'retry_decisions': decisions, **budget.snapshot()}
+if __name__ == '__main__':
+    argparse.ArgumentParser(description=__doc__).parse_args()
+    print(json.dumps(demo(), indent=2))
