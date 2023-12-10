@@ -17,6 +17,11 @@ class RetryBudgetTests(unittest.TestCase):
         b.record_original()
         self.assertTrue(b.allow_retry())
 
+    def test_capacity_caps_burst(self):
+        b = m.RetryBudget(capacity=2, ratio=1)
+        for _ in range(100):
+            b.record_original()
+        self.assertEqual([b.allow_retry() for _ in range(3)], [True, True, False])
 
 
 
