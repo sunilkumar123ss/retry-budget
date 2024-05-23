@@ -23,6 +23,10 @@ class RetryBudgetTests(unittest.TestCase):
             b.record_original()
         self.assertEqual([b.allow_retry() for _ in range(3)], [True, True, False])
 
+    def test_denials_do_not_spend_fraction(self):
+        b = m.RetryBudget(initial='.5')
+        self.assertFalse(b.allow_retry())
+        self.assertEqual(str(b.tokens), '0.5')
 
 
 
