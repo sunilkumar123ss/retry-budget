@@ -28,6 +28,11 @@ class RetryBudgetTests(unittest.TestCase):
         self.assertFalse(b.allow_retry())
         self.assertEqual(str(b.tokens), '0.5')
 
+    def test_aggregate_bound(self):
+        b = m.RetryBudget(capacity=100, ratio='.2', initial=2)
+        for _ in range(100):
+            b.record_original()
+        self.assertEqual(sum((b.allow_retry() for _ in range(100))), 22)
 
 
 if __name__ == '__main__':
