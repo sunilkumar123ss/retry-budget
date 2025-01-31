@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 9 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 10 of 14. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -21,7 +21,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 7 | 2023-12-10T12:55:09+05:30 | test capacity caps burst (present) |
 | 8 | 2024-05-23T16:11:39+05:30 | test denials do not spend fraction (present) |
 | 9 | 2024-08-11T17:50:54+05:30 | test aggregate bound (present) |
-| 10 | 2025-01-31T11:02:21+05:30 | test invalid settings (later stage) |
+| 10 | 2025-01-31T11:02:21+05:30 | test invalid settings (present) |
 | 11 | 2025-08-09T13:46:33+05:30 | test retry does not earn tokens (later stage) |
 | 12 | 2025-10-24T14:41:48+05:30 | add isolated tests, demo, and help verification (later stage) |
 | 13 | 2026-04-17T12:47:26+05:30 | add the hosted Python verification workflow (later stage) |

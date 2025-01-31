@@ -34,6 +34,10 @@ class RetryBudgetTests(unittest.TestCase):
             b.record_original()
         self.assertEqual(sum((b.allow_retry() for _ in range(100))), 22)
 
+    def test_invalid_settings(self):
+        for args in [{'capacity': 0}, {'ratio': 2}, {'initial': 11}, {'ratio': float('nan')}, {'capacity': True}]:
+            with self.subTest(args=args), self.assertRaises(ValueError):
+                m.RetryBudget(**args)
 
 if __name__ == '__main__':
     unittest.main()
