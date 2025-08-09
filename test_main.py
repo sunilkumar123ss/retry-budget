@@ -39,5 +39,10 @@ class RetryBudgetTests(unittest.TestCase):
             with self.subTest(args=args), self.assertRaises(ValueError):
                 m.RetryBudget(**args)
 
+    def test_retry_does_not_earn_tokens(self):
+        b = m.RetryBudget(initial=1)
+        self.assertTrue(b.allow_retry())
+        self.assertFalse(b.allow_retry())
+        self.assertEqual(b.originals, 0)
 if __name__ == '__main__':
     unittest.main()
